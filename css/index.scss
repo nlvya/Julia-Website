@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+$nav-bg-color: white;
+$nav-hover-color: #ddd;
+$accent-color: #638eb2;
+nav {
+    background: $nav-bg-color;
+    z-index: 100;
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    * {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+    }
+    ul{
+        &.links {
+            list-style-type: none;
+            margin-top: 10px;
+            padding: 0;
+            li {
+                border-bottom-right-radius: 17.6px;
+                border-top-right-radius: 17.6px;
+                &.link {
+                    text-align: left;
+                    width: 100%;
+                    &:hover, &:focus {
+                        background: $nav-hover-color;
+                        &::after {
+                            transform: scaleX(.95);
+                        }
+                    }
+                    &::after {
+                        display: flex;
+                        content: '';
+                        height: 5px;
+                        position: relative;
+                        background-image: linear-gradient(to right, $accent-color , $accent-color, $nav-hover-color);
+        
+                        transform-origin: left;
+                        transition: transform 250ms ease-in-out;
+                        transform: scaleX(0);
+                    }
+                    a {
+                        display: block;
+                        padding: .5rem 3rem;
+                        height: 100%;
+                        color: black;
+                        text-decoration: none;
+                    }
+                }
+                &.logo {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &.icons {
+            list-style-type: none;
+            display: flex;
+            li {
+                background: rgba(0,0,0,.1);
+                border: .1rem solid rgba(0,0,0,.1);
+                &:hover {
+                    background: rgba(0,0,0,.2);
+                    border: .1rem solid $accent-color;
+                }
+                border-radius: 50%;
+                margin: .75rem .5rem;
+                a {
+                    display: grid;
+                    text-decoration: none;
+                    color: black;
+                    width: 30px;
+                    height: 30px;
+                    place-items: center;
+                }
+            }
+        }
+    }
+    
+}
+.content {
+    position: absolute;
+    width: 80vw;
+    height: 100vh;
+    left: 20vw;
+    top: 0;
+    display: flex;
+    .slide {
+        display: grid;
+        grid-gap: 10px;
+        width: 20vw;
+        height: 100vh;
+
+        margin: 0 5px;
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+        img {
+            width: 100%;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+}
+.sliderImages {
+    animation: slideshow 45s linear infinite;
+}
+@keyframes slideshow {
+    100% {transform: translateY(-66.66%);}
+}
+@media only screen and (max-width: 1100px) {
+    nav {
+        width: 40vw;
+    }
+    .content {
+        left: 40vw;
+        width: 60vw;
+        .slide {
+            &.one {
+                visibility: hidden;
+                display: none;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    nav {
+        opacity: .96;
+        width: 100vw;
+        height: 25rem;
+        ul {
+            &.links {
+                li {
+                   border-radius: 0; 
+                }
+            }
+            li.logo {
+                padding: 0 8rem;
+            }
+        }
+    }
+    .content {
+        left: 0;
+        top: 0;
+        width: 100vw;
+        .slide {
+            width: 33.333vw;
+        }
+    }
+}
+@media only screen and (max-width: 680px) {
+    nav {
+        height: 23.5rem;
+        ul {
+            li.logo {
+                padding: 0 2rem;
+            }
+        }
+    }
+    .content {
+        .slide {
+            width: 50vw;
+            &.three {
+                visibility: hidden;
+                display: none;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 440px) {
+    nav {
+        height: 20rem;
+    }
+}
+@media only screen and (max-width: 300px) {
+    nav {
+        height: 18.25rem;
+        ul {
+            li.logo {
+                padding: 0;
+            }
+        }
+    }
+    .content {
+        .slide {
+            width: 100vw;
+            &.two {
+                visibility: hidden;
+                display: none;
+            }
+        }
+    }
+}

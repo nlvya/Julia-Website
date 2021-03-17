@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+nav {
+  background: white;
+  z-index: 100;
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav * {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+nav ul.links {
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+nav ul.links li {
+  border-bottom-right-radius: 17.6px;
+  border-top-right-radius: 17.6px;
+}
+
+nav ul.links li.link {
+  text-align: left;
+  width: 100%;
+}
+
+nav ul.links li.link:hover, nav ul.links li.link:focus {
+  background: #ddd;
+}
+
+nav ul.links li.link:hover::after, nav ul.links li.link:focus::after {
+  -webkit-transform: scaleX(0.95);
+          transform: scaleX(0.95);
+}
+
+nav ul.links li.link::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: '';
+  height: 5px;
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, right top, from(#638eb2), color-stop(#638eb2), to(#ddd));
+  background-image: linear-gradient(to right, #638eb2, #638eb2, #ddd);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+nav ul.links li.link a {
+  display: block;
+  padding: .5rem 3rem;
+  height: 100%;
+  color: black;
+  text-decoration: none;
+}
+
+nav ul.links li.logo img {
+  width: 100%;
+}
+
+nav ul.icons {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul.icons li {
+  background: rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin: .75rem .5rem;
+}
+
+nav ul.icons li:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border: 0.1rem solid #638eb2;
+}
+
+nav ul.icons li a {
+  display: -ms-grid;
+  display: grid;
+  text-decoration: none;
+  color: black;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+}
+
+.content {
+  position: absolute;
+  width: 80vw;
+  height: 100vh;
+  left: 20vw;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .slide {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  width: 20vw;
+  height: 100vh;
+  margin: 0 5px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.content .slide img {
+  width: 100%;
+}
+
+.content .slide::-webkit-scrollbar {
+  display: none;
+}
+
+.sliderImages {
+  -webkit-animation: slideshow 45s linear infinite;
+          animation: slideshow 45s linear infinite;
+}
+
+@-webkit-keyframes slideshow {
+  100% {
+    -webkit-transform: translateY(-66.66%);
+            transform: translateY(-66.66%);
+  }
+}
+
+@keyframes slideshow {
+  100% {
+    -webkit-transform: translateY(-66.66%);
+            transform: translateY(-66.66%);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  nav {
+    width: 40vw;
+  }
+  .content {
+    left: 40vw;
+    width: 60vw;
+  }
+  .content .slide.one {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    opacity: .96;
+    width: 100vw;
+    height: 25rem;
+  }
+  nav ul.links li {
+    border-radius: 0;
+  }
+  nav ul li.logo {
+    padding: 0 8rem;
+  }
+  .content {
+    left: 0;
+    top: 0;
+    width: 100vw;
+  }
+  .content .slide {
+    width: 33.333vw;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  nav {
+    height: 23.5rem;
+  }
+  nav ul li.logo {
+    padding: 0 2rem;
+  }
+  .content .slide {
+    width: 50vw;
+  }
+  .content .slide.three {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  nav {
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  nav {
+    height: 18.25rem;
+  }
+  nav ul li.logo {
+    padding: 0;
+  }
+  .content .slide {
+    width: 100vw;
+  }
+  .content .slide.two {
+    visibility: hidden;
+    display: none;
+  }
+}
+/*# sourceMappingURL=index.css.map */
