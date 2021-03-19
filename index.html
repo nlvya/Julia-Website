@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="css/index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
-<body>
+<body onload="moveSlides()">
     <nav>
         <ul class="links">
             <li class="logo"><img src="images/watermark.png" alt="Miss Julia Marie"></li>
@@ -20,23 +24,23 @@
             <li class="link"><a href="#">Contact</a></li>
         </ul>
         <ul class="icons">
-            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
         </ul>
     </nav>
 
     <div class="content">
         <div id="slide1" class="slide one">
-            <img class="sliderImages" src="images/slide-one.png">
+            <img id="slideImg1" class="sliderImg" src="images/slide-one.png">
         </div>
         <div id="slide2" class="slide two">
-            <img class="sliderImages" src="images/slide-two.png">
+            <img id="slideImg2" class="sliderImg" src="images/slide-two.png">
         </div>
         <div id="slide3" class="slide three">
-            <img class="sliderImages" src="images/slide-three.png">
+            <img id="slideImg3" class="sliderImg" src="images/slide-three.png">
         </div>
         <div id="slide4" class="slide four">
-            <img class="sliderImages" src="images/slide-four.png">
+            <img id="slideImg4" class="sliderImg" src="images/slide-four.png">
         </div>
     </div>
 </body>

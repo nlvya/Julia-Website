@@ -2,6 +2,10 @@
 $nav-bg-color: white;
 $nav-hover-color: #ddd;
 $accent-color: #638eb2;
+body {
+    
+    overflow: hidden;
+}
 nav {
     background: $nav-bg-color;
     z-index: 100;
@@ -93,14 +97,25 @@ nav {
         display: grid;
         grid-gap: 10px;
         width: 20vw;
-        height: 100vh;
+        height: 100%;
 
         margin: 0 5px;
 
-        overflow-x: hidden;
-        overflow-y: scroll;
+        overflow: hidden;
         img {
             width: 100%;
+        }
+        #slideImg1 {
+            transition: transform 35s linear;
+        }
+        #slideImg2 {
+            transition: transform 50s linear;
+        }
+        #slideImg3 {
+            transition: transform 45s linear;
+        }
+        #slideImg4 {
+            transition: transform 60s linear;
         }
 
         &::-webkit-scrollbar {
@@ -109,12 +124,18 @@ nav {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     }
-}
-.sliderImages {
-    animation: slideshow 45s linear infinite;
-}
-@keyframes slideshow {
-    100% {transform: translateY(-66.66%);}
+    @keyframes slide1Scroll {
+        100% {transform: translateY(calc(100vh - 100%));}
+    }
+    @keyframes slide1Scrol2 {
+        100% {transform: translateY(calc(100vh - 100%));}
+    }
+    @keyframes slide1Scrol3 {
+        100% {transform: translateY(calc(100vh - 100%));}
+    }
+    @keyframes slide1Scrol4 {
+        100% {transform: translateY(calc(100vh - 100%));}
+    }
 }
 @media only screen and (max-width: 1100px) {
     nav {

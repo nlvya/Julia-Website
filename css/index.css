@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+body {
+  overflow: hidden;
+}
+
 nav {
   background: white;
   z-index: 100;
@@ -115,10 +119,9 @@ nav ul.icons li a {
   display: grid;
   grid-gap: 10px;
   width: 20vw;
-  height: 100vh;
+  height: 100%;
   margin: 0 5px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
@@ -129,26 +132,91 @@ nav ul.icons li a {
   width: 100%;
 }
 
+.content .slide #slideImg1 {
+  -webkit-transition: -webkit-transform 35s linear;
+  transition: -webkit-transform 35s linear;
+  transition: transform 35s linear;
+  transition: transform 35s linear, -webkit-transform 35s linear;
+}
+
+.content .slide #slideImg2 {
+  -webkit-transition: -webkit-transform 50s linear;
+  transition: -webkit-transform 50s linear;
+  transition: transform 50s linear;
+  transition: transform 50s linear, -webkit-transform 50s linear;
+}
+
+.content .slide #slideImg3 {
+  -webkit-transition: -webkit-transform 45s linear;
+  transition: -webkit-transform 45s linear;
+  transition: transform 45s linear;
+  transition: transform 45s linear, -webkit-transform 45s linear;
+}
+
+.content .slide #slideImg4 {
+  -webkit-transition: -webkit-transform 60s linear;
+  transition: -webkit-transform 60s linear;
+  transition: transform 60s linear;
+  transition: transform 60s linear, -webkit-transform 60s linear;
+}
+
 .content .slide::-webkit-scrollbar {
   display: none;
 }
 
-.sliderImages {
-  -webkit-animation: slideshow 45s linear infinite;
-          animation: slideshow 45s linear infinite;
-}
-
-@-webkit-keyframes slideshow {
+@-webkit-keyframes slide1Scroll {
   100% {
-    -webkit-transform: translateY(-66.66%);
-            transform: translateY(-66.66%);
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
   }
 }
 
-@keyframes slideshow {
+@keyframes slide1Scroll {
   100% {
-    -webkit-transform: translateY(-66.66%);
-            transform: translateY(-66.66%);
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
+  }
+}
+
+@-webkit-keyframes slide1Scrol2 {
+  100% {
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
+  }
+}
+
+@keyframes slide1Scrol2 {
+  100% {
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
+  }
+}
+
+@-webkit-keyframes slide1Scrol3 {
+  100% {
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
+  }
+}
+
+@keyframes slide1Scrol3 {
+  100% {
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
+  }
+}
+
+@-webkit-keyframes slide1Scrol4 {
+  100% {
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
+  }
+}
+
+@keyframes slide1Scrol4 {
+  100% {
+    -webkit-transform: translateY(calc(100vh - 100%));
+            transform: translateY(calc(100vh - 100%));
   }
 }
 
